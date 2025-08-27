@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.container {
+  background-color: #fff;
+  width: 100%;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  
+}
+
+header img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.input-group {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+}
+
+.input-group button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.ingredients-section {
+  margin-top: 20px;
+  justify-content: left;
+}
+
+.ingredients-section h2 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.ingredients-section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #333;
+}
+
+.recipe-box {
+  margin-top: 30px;
+  background-color: #f7f5f0;
+  padding: 15px 20px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipe-box p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.recipe-box button {
+  background-color: #d86c51;
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+
+
+/* counter section */
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #262626;
+  color: #D9D9D9;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container > h1 {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.counter {
+  display: flex;
+  align-items: flex-end;
+  align-self: center;
+  margin-top: 40px;
+}
+
+.counter > button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: #737373;
+  color: #D9D9D9;
+  font-size: 1.5rem;
+}
+
+.counter > button:hover {
+  background-color: #404040;
+  color: #D9D9D9;
+}
+
+.count {
+  background-color: white;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #262626;
+  margin-block: 0 10px;
+  font-size: 2rem;
+}
+
+.plus {
+  margin-left: -20px;
+}
+
+.minus {
+  margin-right: -20px;
+  z-index: 1;
+}
