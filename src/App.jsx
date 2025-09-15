@@ -1,57 +1,110 @@
 
 
-import { useState } from 'react';
 import './App.css'
 
 import Header from './components/Header';
 import IngrediantList from './components/IngrediantList';
-import IngredientForm from './components/ingredientForm';
+import { useState } from 'react';
+import ShowRecipe from './components/Showrecipe';
+
+import { getRecipeFromMistral } from './ai';
+
+
+
+// const accessToken = import.meta.env.VITE_HF_ACCESS_TOKEN;
 
 
 function App() {
 
 
-  const [counter, setCounter] = useState(0);
+  const [ingredients, setIngredients] = useState(
+    ["all the main spices", "ground beef", "tomato paste"]
+  )
 
-  function handleIncrement() {
-    setCounter(prev => prev + 1);  
+
+
+  const [recipe, setRecipe] = useState(null);
+
+
+  async function getRecipe() {
+
+
+
+    const response = await getRecipeFromMistral(ingredients);
+
+    setRecipe(response);
+    console.log('The recipe is called', response);
+
+
   }
-  
-  function handleDecrement() {
-    setCounter(prev => {
-      if (prev <= 0) {
-        alert("Can't go beyond 0");
-        return prev;  
-      }
-      return prev - 1;
-    });
+
+
+  const [username, setUsername] = useState("Sadat");
+
+
+  function addIngredient(formData) {
+    const newIngredient = formData.get("ingredient")
+    setIngredients(prevIngredients => [...prevIngredients, newIngredient])
   }
+
 
   return (
     <>
-      <div className="container">
 
 
- 
-            <h1>How many times will Bob say "state" in this section?</h1>
-            <div className="counter">
-                <button className="minus" aria-label="Decrease count" onClick={handleDecrement}>–</button>
-                <h2 className="count">{counter}</h2>
-                <button className="plus" aria-label="Increase count" onClick={handleIncrement}>+</button>
-            </div>
-       
+      <Header loggedInUser={username} />
+
+
+
+      <div style={{ marginTop: '20px' }}>
+        <form action={addIngredient} className="add-ingredient-form">
+          <input
+            type="text"
+            placeholder="e.g. oregano"
+            aria-label="Add ingredient"
+            name="ingredient"
+          />
+          <button>Add ingredient</button>
+        </form>
+      </div>
+
+      <IngrediantList loggedInUser={username} ingredientList={ingredients} fetchRecipe={getRecipe} />
+
+
+
+
+
+
+      {
+        recipe && <ShowRecipe recipe={recipe} />
+      }
+
+
+
+
+
+      {/* <Pad /> */}
+
+      {/* <Profile /> */}
+      {/* <SimpleForm />
       
-      <Header />
 
-       {/* <IngredientForm /> */}
 
-        <IngrediantList />
 
-        <div className="recipe-box">
+        <FavriteThings />
+
+        <Toggle />
+
+        <Counter /> */}
+      {/* <IngredientForm /> */}
+
+      {/* <Counter /> */}
+
+
+      {/* <div className="recipe-box">
           <p>Ready for a recipe? Generate a recipe from your list of ingredients.</p>
           <button>Get a recipe</button>
-        </div>
-      </div>
+        </div> */}
 
     </>
   )

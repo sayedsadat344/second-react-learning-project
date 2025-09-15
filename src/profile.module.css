@@ -1,0 +1,50 @@
+/* main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: white;
+    width: 200px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    height: 350px;
+}
+
+.avatar {
+    width: 100%;
+    padding: 10%;
+    padding-bottom: 0;
+}
+
+.name {
+    margin-block: 13px;
+    color: #333333;
+}
+
+.info {
+    padding: 10px;
+}
+
+.favorite {
+    width: 25px;
+    cursor: pointer;
+}
+
+.contact {
+    font-size: 0.75rem;
+    color: gray;
+    margin-block: 7px;
+}
+
+.favorite-button {
+    border: none;
+    background: transparent;
+}
+
+.favorite-button:active {
+    transform: none;
+    box-shadow: none;
+} */
